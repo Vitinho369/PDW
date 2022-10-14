@@ -1,4 +1,4 @@
-const fetchFirst = () => {
+/*const fetchFirst = () => {
     const getFirstUrl = id => `https://www.fishwatch.gov/api/species${id}`
 
 const link = "https://www.fishwatch.gov/api/species"
@@ -11,7 +11,7 @@ const link = "https://www.fishwatch.gov/api/species"
         document.getElementById("campo").innerHTML = data[0]["Scientific Name"];
         console.log(data);
     });
-}
+}*/
 /*const link = "https://www.fishwatch.gov/api/species"
 
 fetch(link).then(response =>{
@@ -20,3 +20,29 @@ fetch(link).then(response =>{
     console.log(corpo)
     document.getElementById("span").innerHTML = corpo.toString()
 })*/
+
+const link = "https://www.fishwatch.gov/api/species"
+
+    fetch(link)
+    .then((resp) => resp.json())
+    .then(function(data){
+        var listImage = document.getElementById("list_image");
+        var images;
+        var figure;
+        var legend;
+
+        for(i in data){
+            images = document.createElement("img");
+            figure = document.createElement("figure");
+            legend = document.createElement("figcaption");
+
+            images.src = data[i]["Species Illustration Photo"].src;
+            legend.innerHTML = data[i]["Scientific Name"] + " " +i;
+
+            figure.append(images);
+            figure.append(legend)
+            listImage.append(figure);
+        }
+       
+        console.log(data);
+    });

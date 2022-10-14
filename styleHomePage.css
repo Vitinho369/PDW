@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(126, 171, 255);
+}
+
+#titlePage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    text-align: center;
+    background-color: white;
+    border: 10px solid blue;
+    border-radius: 20px;
+    width: 600px;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
+    text-align: center;
+}
+
+#title{
+    display: inline;
+    font-size: 15vmin;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: rgb(101, 101, 233);
+}
+
+#initButton{
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20pt;
+    background-color: rgb(126, 171, 255);
+    border: none;
+    outline: none;
+    color: rgb(4, 4, 177);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+#initButton:hover{
+    background-color: rgb(88, 88, 189);
+    color: rgb(152, 181, 236);
+}
+
+@media screen and (min-width: 1000px){
+    #algaL{
+        margin-top: 17%;
+        height: 400px;
+        width: 200px;
+        display: flex;
+        position: absolute;
+        margin-left: 77%;
+    }
+
+    #algaR{
+        margin-top: 17%;
+        height: 400px;
+        width: 200px;
+        display: flex;
+        position: absolute;
+        margin-left: 5%;
+    }
+
+    #fish1{
+        width: 200px;
+        height: 200px;
+    }
+
+    #fish2{
+        margin-left: 80%;
+        margin-top: -15%;
+        width: 200px;
+        height: 200px;
+    }
+    
+    #fish3{
+        margin-left: 45%;
+        margin-top: 18%;
+        width: 200px;
+        height: 200px;
+    }
+
+    
+}
+
+@media screen and (max-width: 1000px){
+    #algaL{
+        margin-top: 18%;
+        height: 400px;
+        width: 200px;
+        display: flex;
+        position: absolute;
+        margin-left: 77%;
+    }
+
+    #algaR{
+        margin-top: 18%;
+        height: 400px;
+        width: 200px;
+        display: flex;
+        position: absolute;
+        margin-left: 0.3%;
+    }
+
+    #fish1{
+        width: 200px;
+        height: 200px;
+    }
+
+    #fish2{
+        margin-left: 80%;
+        margin-top: -25%;
+        width: 200px;
+        height: 200px;
+    }
+    
+    #fish3{
+        margin-left: 45%;
+        margin-top: 29%;
+        width: 200px;
+        height: 200px;
+    }
+
+    
+}
