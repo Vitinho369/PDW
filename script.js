@@ -21,7 +21,8 @@ fetch(link).then(response =>{
     document.getElementById("span").innerHTML = corpo.toString()
 })*/
 
-const link = "https://www.fishwatch.gov/api/species"
+
+/*const link = "https://www.fishwatch.gov/api/species"
 
     fetch(link)
     .then((resp) => resp.json())
@@ -45,4 +46,9 @@ const link = "https://www.fishwatch.gov/api/species"
         }
        
         console.log(data);
-    });
+    });*/
+
+
+    function navigatePage() {
+    window.location.href='/gamePages/fishPage.html';
+}
