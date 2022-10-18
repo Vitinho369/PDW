@@ -50,5 +50,9 @@ fetch(link).then(response =>{
 
 
     function navigatePage() {
-    window.location.href='/gamePages/fishPage.html';
+        //var url = window.location.pathname.split('index.html')
+        //var namePage = url.pop();
+        //url += '/gamePages/fishPage.html';
+        //window.location.href =   url ;
+        window.location.href =   '/gamePages/fishPage.html?fase=1';
 }
