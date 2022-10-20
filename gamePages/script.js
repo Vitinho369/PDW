@@ -4,7 +4,8 @@ const link = "https://www.fishwatch.gov/api/species";
     .then((resp) => resp.json())
     .then(function(data){
 
-        var fase = parseInt(window.location.toString().split("?fase=").pop());
+        var fase = parseInt(window.location.toString().split("fase=").pop());
+        var ptn = window.location.toString().split("ptn=").pop();
         var fishs = [];
         var fishCorrect;
         var fishesOption = document.getElementById("list_image");
@@ -12,13 +13,43 @@ const link = "https://www.fishwatch.gov/api/species";
         var figure = document.createElement("div");
         var options = [];
 
+        function navigatePage(){
+            window.location.href = '/gamePages/fishPage.html?fase=' + fase + "&ptn=" + ptn; 
+        }
+
         function rigthFish(){
-            fase += 1;
-            window.location.href =   '/gamePages/fishPage.html?fase=' + fase; 
+            ptn++;
+            fase++;
+            document.getElementById("list_image").remove(options[0].image.id);
+            document.getElementById("optionChallenge").remove(options[0].button.id);
+            var divAcert = document.createElement("div");
+            var acert = document.createElement("lottie-player");
+            acert.src = "https://assets10.lottiefiles.com/packages/lf20_lrlahijx.json";
+            acert.background="transparent";
+            acert.speed = "0.7";
+            acert.loop = "loop";
+            acert.autoplay = "autoplay";
+            divAcert.style = "height: 600px;";
+            divAcert.append(acert);
+            document.body.append(divAcert); 
+            setTimeout(function(){navigatePage()}, 2500);
         }
         
         function wrongFish(){
-            alert("Errou, tente novamente")
+            fase++;
+            document.getElementById("list_image").remove(options[0].image.id);
+            document.getElementById("optionChallenge").remove(options[0].button.id);
+            var divErro = document.createElement("div");
+            var erro = document.createElement("lottie-player");
+            erro.src = "https://assets9.lottiefiles.com/packages/lf20_pqpmxbxp.json";
+            erro.background="transparent";
+            erro.speed = "0.7";
+            erro.loop = "loop";
+            erro.autoplay = "autoplay";
+            divErro.style = "height: 600px;";
+            divErro.append(erro);
+            document.body.append(divErro); 
+            setTimeout(function(){navigatePage()}, 2500);
         }
 
         for(var i=0; i < 3; i++){

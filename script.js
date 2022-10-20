@@ -54,5 +54,5 @@ fetch(link).then(response =>{
         //var namePage = url.pop();
         //url += '/gamePages/fishPage.html';
         //window.location.href =   url ;
-        window.location.href =   '/gamePages/fishPage.html?fase=1';
+        window.location.href =   '/gamePages/fishPage.html?fase=1&ptn=0';
 }
