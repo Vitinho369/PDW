@@ -41,15 +41,15 @@ const link = "https://www.fishwatch.gov/api/species";
             document.getElementById("optionChallenge").remove(options[0].button.id);
             var divErro = document.createElement("div");
             var erro = document.createElement("lottie-player");
-            erro.src = "https://assets9.lottiefiles.com/packages/lf20_pqpmxbxp.json";
+            erro.src = "https://assets6.lottiefiles.com/private_files/lf30_8wacjhqf.json";
             erro.background="transparent";
             erro.speed = "0.7";
             erro.loop = "loop";
             erro.autoplay = "autoplay";
-            divErro.style = "height: 600px;";
+            divErro.style = "height: 450px; position: relative; top:60px;";
             divErro.append(erro);
             document.body.append(divErro); 
-            setTimeout(function(){navigatePage()}, 2500);
+            setTimeout(function(){navigatePage()}, 2000);
         }
 
         for(var i=0; i < 3; i++){
@@ -92,14 +92,79 @@ const link = "https://www.fishwatch.gov/api/species";
             fishCorrectImage = {image: data[71]["Species Illustration Photo"].src, nameScientific: data[71]["Scientific Name"]};
         
         }else if(fase == 4){
-            fishs.push(data[67]["Species Illustration Photo"].src);
-            fishs.push(data[68]["Species Illustration Photo"].src);  
-            fishs.push(data[71]["Species Illustration Photo"].src);  
+            fishs.push(data[46]["Species Illustration Photo"].src);
+            fishs.push(data[47]["Species Illustration Photo"].src);  
+            fishs.push(data[66]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick  =  wrongFish;
+            options[1].button.onclick  =  rigthFish;
+            options[2].button.onclick = wrongFish;
         
-            fishCorrectImage = {image: data[71]["Species Illustration Photo"].src, nameScientific: data[71]["Scientific Name"]};
+            fishCorrectImage = {image: data[47]["Species Illustration Photo"].src, nameScientific: data[47]["Scientific Name"]};
 
+        }else if(fase == 5){
+            fishs.push(data[48]["Species Illustration Photo"].src);
+            fishs.push(data[49]["Species Illustration Photo"].src);  
+            fishs.push(data[109]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick  =  wrongFish;
+            options[1].button.onclick  =  wrongFish;
+            options[2].button.onclick = rigthFish;
+        
+            fishCorrectImage = {image: data[58]["Species Illustration Photo"].src, nameScientific: data[58]["Scientific Name"]};
+
+        }else if(fase == 6){
+            fishs.push(data[30]["Species Illustration Photo"].src);
+            fishs.push(data[31]["Species Illustration Photo"].src);  
+            fishs.push(data[33]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick  =  wrongFish;
+            options[1].button.onclick  =  rigthFish;
+            options[2].button.onclick = wrongFish;
+        
+            fishCorrectImage = {image: data[31]["Species Illustration Photo"].src, nameScientific: data[31]["Scientific Name"]};
+
+        }else if(fase == 7){
+            fishs.push(data[28]["Species Illustration Photo"].src);
+            fishs.push(data[97]["Species Illustration Photo"].src);  
+            fishs.push(data[44]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick  =  wrongFish;
+            options[1].button.onclick  =  wrongFish;
+            options[2].button.onclick = rigthFish;
+        
+            fishCorrectImage = {image: data[44]["Species Illustration Photo"].src, nameScientific: data[44]["Scientific Name"]};
+
+        }else if(fase == 8){
+            fishs.push(data[58]["Species Illustration Photo"].src);
+            fishs.push(data[26]["Species Illustration Photo"].src);  
+            fishs.push(data[48]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick  = rigthFish;
+            options[1].button.onclick  =  wrongFish;
+            options[2].button.onclick = wrongFish;
+        
+            fishCorrectImage = {image: data[58]["Species Illustration Photo"].src, nameScientific: data[58]["Scientific Name"]};
+        }else if(fase == 9){
+            fishs.push(data[108]["Species Illustration Photo"].src);
+            fishs.push(data[103]["Species Illustration Photo"].src);  
+            fishs.push(data[72]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick = wrongFish;
+            options[1].button.onclick  =  wrongFish;
+            options[2].button.onclick  = rigthFish;
+            fishCorrectImage = {image: data[108]["Species Illustration Photo"].src, nameScientific: data[108]["Scientific Name"]};
+        }else if(fase == 10){
+            fishs.push(data[108]["Species Illustration Photo"].src);
+            fishs.push(data[103]["Species Illustration Photo"].src);  
+            fishs.push(data[72]["Species Illustration Photo"].src);
+            
+            options[0].button.onclick = wrongFish;
+            options[1].button.onclick  =  wrongFish;
+            options[2].button.onclick  = rigthFish;
+            fishCorrectImage = {image: data[108]["Species Illustration Photo"].src, nameScientific: data[108]["Scientific Name"]};
         }
-
+            
             for(var i=0; i < 3; i++){
                 options[i]["image"].src = fishs[i];
                 options[i]["button"].append(options[i]["image"]);
