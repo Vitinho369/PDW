@@ -2,47 +2,32 @@ body{
     background-color: rgb(126, 171, 255);
 }
 
-#titlePage{
+#scoreboard{
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     display: block;
-    text-align: center;
     background-color: white;
-    border: 10px solid blue;
+    text-align: center;
     border-radius: 20px;
     width: 600px;
     height: 300px;
-    box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
-}
-
-#title{
-    display: inline;
-    font-size: 13vmin;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
+    font-size: 7vmin;
     color: rgb(101, 101, 233);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#initButton{
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 40pt;
-    background-color: rgb(126, 171, 255);
-    border: none;
-    outline: none;
-    color: rgb(4, 4, 177);
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-
-#initButton:hover{
-    background-color: rgb(88, 88, 189);
-    color: rgb(152, 181, 236);
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 @media screen and (min-width: 1000px){
