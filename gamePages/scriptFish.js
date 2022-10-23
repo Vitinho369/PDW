@@ -13,46 +13,58 @@ const link = "https://www.fishwatch.gov/api/species";
         var figure = document.createElement("div");
         var options = [];
 
-        function navigatePage(){
-            window.location.href = '/gamePages/fishPage.html?fase=' + fase + "&ptn=" + ptn; 
+        function navigatePage(final){
+            if(final == true){
+                window.location.href = "finalPage.html?ptn=" + ptn;
+            }else{
+                window.location.href = '/gamePages/fishPage.html?fase=' + fase + "&ptn=" + ptn; 
+            }
+            
         }
 
         function rigthFish(){
-            if (fase <= 10){
+            fase++;
+            document.getElementById("list_image").remove(options[0].image.id);
+            document.getElementById("optionChallenge").remove(options[0].button.id);
+            var divAcert = document.createElement("div");
+            var acert = document.createElement("lottie-player");
+            acert.src = "https://assets10.lottiefiles.com/packages/lf20_lrlahijx.json";
+            acert.background="transparent";
+            acert.speed = "0.7";
+            acert.loop = "loop";
+            acert.autoplay = "autoplay";
+            divAcert.style = "height: 600px;";
+            divAcert.append(acert);
+            document.body.append(divAcert); 
+            
+            if(fase == 11){
+                setTimeout(function(){navigatePage(true)}, 2500);
+            }else {
                 ptn++;
-                fase++;
-                document.getElementById("list_image").remove(options[0].image.id);
-                document.getElementById("optionChallenge").remove(options[0].button.id);
-                var divAcert = document.createElement("div");
-                var acert = document.createElement("lottie-player");
-                acert.src = "https://assets10.lottiefiles.com/packages/lf20_lrlahijx.json";
-                acert.background="transparent";
-                acert.speed = "0.7";
-                acert.loop = "loop";
-                acert.autoplay = "autoplay";
-                divAcert.style = "height: 600px;";
-                divAcert.append(acert);
-                document.body.append(divAcert); 
-                setTimeout(function(){navigatePage()}, 2500);
+                 setTimeout(function(){navigatePage(false)}, 2500);
             }
         }
         
         function wrongFish(){
-            if (fase <= 10){
-                fase++;
-                document.getElementById("list_image").remove(options[0].image.id);
-                document.getElementById("optionChallenge").remove(options[0].button.id);
-                var divErro = document.createElement("div");
-                var erro = document.createElement("lottie-player");
-                erro.src = "https://assets6.lottiefiles.com/private_files/lf30_8wacjhqf.json";
-                erro.background="transparent";
-                erro.speed = "0.7";
-                erro.loop = "loop";
-                erro.autoplay = "autoplay";
-                divErro.style = "height: 450px; position: relative; top:60px;";
-                divErro.append(erro);
-                document.body.append(divErro); 
-                setTimeout(function(){navigatePage()}, 2000);
+            
+            fase++;
+            document.getElementById("list_image").remove(options[0].image.id);
+            document.getElementById("optionChallenge").remove(options[0].button.id);
+            var divErro = document.createElement("div");
+            var erro = document.createElement("lottie-player");
+            erro.src = "https://assets6.lottiefiles.com/private_files/lf30_8wacjhqf.json";
+            erro.background="transparent";
+            erro.speed = "0.7";
+            erro.loop = "loop";
+            erro.autoplay = "autoplay";
+            divErro.style = "height: 450px; position: relative; top:60px;";
+            divErro.append(erro);
+            document.body.append(divErro); 
+            
+            if(fase == 11){
+                setTimeout(function(){navigatePage(true)}, 2100);
+            }else {
+                 setTimeout(function(){navigatePage(false)}, 2100);
             }
         }
 
