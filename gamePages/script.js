@@ -18,38 +18,42 @@ const link = "https://www.fishwatch.gov/api/species";
         }
 
         function rigthFish(){
-            ptn++;
-            fase++;
-            document.getElementById("list_image").remove(options[0].image.id);
-            document.getElementById("optionChallenge").remove(options[0].button.id);
-            var divAcert = document.createElement("div");
-            var acert = document.createElement("lottie-player");
-            acert.src = "https://assets10.lottiefiles.com/packages/lf20_lrlahijx.json";
-            acert.background="transparent";
-            acert.speed = "0.7";
-            acert.loop = "loop";
-            acert.autoplay = "autoplay";
-            divAcert.style = "height: 600px;";
-            divAcert.append(acert);
-            document.body.append(divAcert); 
-            setTimeout(function(){navigatePage()}, 2500);
+            if (fase <= 10){
+                ptn++;
+                fase++;
+                document.getElementById("list_image").remove(options[0].image.id);
+                document.getElementById("optionChallenge").remove(options[0].button.id);
+                var divAcert = document.createElement("div");
+                var acert = document.createElement("lottie-player");
+                acert.src = "https://assets10.lottiefiles.com/packages/lf20_lrlahijx.json";
+                acert.background="transparent";
+                acert.speed = "0.7";
+                acert.loop = "loop";
+                acert.autoplay = "autoplay";
+                divAcert.style = "height: 600px;";
+                divAcert.append(acert);
+                document.body.append(divAcert); 
+                setTimeout(function(){navigatePage()}, 2500);
+            }
         }
         
         function wrongFish(){
-            fase++;
-            document.getElementById("list_image").remove(options[0].image.id);
-            document.getElementById("optionChallenge").remove(options[0].button.id);
-            var divErro = document.createElement("div");
-            var erro = document.createElement("lottie-player");
-            erro.src = "https://assets6.lottiefiles.com/private_files/lf30_8wacjhqf.json";
-            erro.background="transparent";
-            erro.speed = "0.7";
-            erro.loop = "loop";
-            erro.autoplay = "autoplay";
-            divErro.style = "height: 450px; position: relative; top:60px;";
-            divErro.append(erro);
-            document.body.append(divErro); 
-            setTimeout(function(){navigatePage()}, 2000);
+            if (fase <= 10){
+                fase++;
+                document.getElementById("list_image").remove(options[0].image.id);
+                document.getElementById("optionChallenge").remove(options[0].button.id);
+                var divErro = document.createElement("div");
+                var erro = document.createElement("lottie-player");
+                erro.src = "https://assets6.lottiefiles.com/private_files/lf30_8wacjhqf.json";
+                erro.background="transparent";
+                erro.speed = "0.7";
+                erro.loop = "loop";
+                erro.autoplay = "autoplay";
+                divErro.style = "height: 450px; position: relative; top:60px;";
+                divErro.append(erro);
+                document.body.append(divErro); 
+                setTimeout(function(){navigatePage()}, 2000);
+            }
         }
 
         for(var i=0; i < 3; i++){
@@ -155,14 +159,14 @@ const link = "https://www.fishwatch.gov/api/species";
             options[2].button.onclick  = rigthFish;
             fishCorrectImage = {image: data[108]["Species Illustration Photo"].src, nameScientific: data[108]["Scientific Name"]};
         }else if(fase == 10){
-            fishs.push(data[108]["Species Illustration Photo"].src);
-            fishs.push(data[103]["Species Illustration Photo"].src);  
-            fishs.push(data[72]["Species Illustration Photo"].src);
+            fishs.push(data[96]["Species Illustration Photo"].src);
+            fishs.push(data[115]["Species Illustration Photo"].src);  
+            fishs.push(data[57]["Species Illustration Photo"].src);
             
             options[0].button.onclick = wrongFish;
-            options[1].button.onclick  =  wrongFish;
-            options[2].button.onclick  = rigthFish;
-            fishCorrectImage = {image: data[108]["Species Illustration Photo"].src, nameScientific: data[108]["Scientific Name"]};
+            options[1].button.onclick  =  rigthFish;
+            options[2].button.onclick  = wrongFish;
+            fishCorrectImage = {image: data[57]["Species Illustration Photo"].src, nameScientific: data[57]["Scientific Name"]};
         }
             
             for(var i=0; i < 3; i++){
