@@ -15,9 +15,13 @@ const link = "https://www.fishwatch.gov/api/species";
 
         function navigatePage(final){
             if(final == true){
-                window.location.href = "/gamePages/finalPage/finalPage.html?ptn=" + ptn;
+                var url = window.location.pathname.split('fishPage.html');
+                
+                window.location.href = url[0]  + "/pageFinal/finalPage.html?ptn=" + ptn;
             }else{
-                window.location.href = '/gamePages/fishPage.html?fase=' + fase + "&ptn=" + ptn; 
+                var url = window.location.pathname.split('fishPage.html');
+                
+                window.location.href = url[0]  + "fishPage.html?fase=" + fase + "&ptn=" + ptn;
             }
             
         }
