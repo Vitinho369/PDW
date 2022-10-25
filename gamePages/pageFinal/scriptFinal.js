@@ -10,7 +10,7 @@ function getPoints(){
  if (ptn > 7) {
     document.getElementById("message").innerHTML = "Parabéns! Você finalizou o jogo";
  }else if (ptn > 4) {
-    document.getElementById("message").innerHTML = "Parabéns! Jogue mais um pouco par conseguir uma pontuação melhor";
+    document.getElementById("message").innerHTML = "Parabéns! Jogue mais um pouco para conseguir uma pontuação melhor";
  }else {
     document.getElementById("message").innerHTML = "Jogue novamente e consiga uma pontuação maior";
  }
