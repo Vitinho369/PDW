@@ -87,7 +87,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick = rigthFish;
         
-            fishCorrectImage = {image: data[32]["Species Illustration Photo"].src, nameScientific: data[32]["Scientific Name"]};
+            fishCorrectImage = data[32]["Species Illustration Photo"].src;
 
         }else if(fase == 2){
             fishs.push(data[3]["Species Illustration Photo"].src);
@@ -98,7 +98,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[2].button.onclick  =  wrongFish;
             options[1].button.onclick = rigthFish;
         
-            fishCorrectImage = {image: data[38]["Species Illustration Photo"].src, nameScientific: data[38]["Scientific Name"]};
+            fishCorrectImage = data[38]["Species Illustration Photo"].src;
 
         }else if(fase == 3){
             fishs.push(data[71]["Species Illustration Photo"].src);
@@ -109,7 +109,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick = wrongFish;
         
-            fishCorrectImage = {image: data[71]["Species Illustration Photo"].src, nameScientific: data[71]["Scientific Name"]};
+            fishCorrectImage = data[71]["Species Illustration Photo"].src;
         
         }else if(fase == 4){
             fishs.push(data[46]["Species Illustration Photo"].src);
@@ -120,7 +120,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  rigthFish;
             options[2].button.onclick = wrongFish;
         
-            fishCorrectImage = {image: data[47]["Species Illustration Photo"].src, nameScientific: data[47]["Scientific Name"]};
+            fishCorrectImage = data[47]["Species Illustration Photo"].src;
 
         }else if(fase == 5){
             fishs.push(data[48]["Species Illustration Photo"].src);
@@ -131,7 +131,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick = rigthFish;
         
-            fishCorrectImage = {image: data[49]["Species Illustration Photo"].src, nameScientific: data[49]["Scientific Name"]};
+            fishCorrectImage = data[49]["Species Illustration Photo"].src;
 
         }else if(fase == 6){
             fishs.push(data[30]["Species Illustration Photo"].src);
@@ -142,7 +142,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  rigthFish;
             options[2].button.onclick = wrongFish;
         
-            fishCorrectImage = {image: data[31]["Species Illustration Photo"].src, nameScientific: data[31]["Scientific Name"]};
+            fishCorrectImage = data[31]["Species Illustration Photo"].src;
 
         }else if(fase == 7){
             fishs.push(data[13]["Species Illustration Photo"].src);
@@ -153,7 +153,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick = rigthFish;
         
-            fishCorrectImage = {image: data[44]["Species Illustration Photo"].src, nameScientific: data[44]["Scientific Name"]};
+            fishCorrectImage = data[44]["Species Illustration Photo"].src;
 
         }else if(fase == 8){
             fishs.push(data[58]["Species Illustration Photo"].src);
@@ -164,7 +164,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick = wrongFish;
         
-            fishCorrectImage = {image: data[58]["Species Illustration Photo"].src, nameScientific: data[58]["Scientific Name"]};
+            fishCorrectImage = data[58]["Species Illustration Photo"].src;
         }else if(fase == 9){
             fishs.push(data[72]["Species Illustration Photo"].src);
             fishs.push(data[103]["Species Illustration Photo"].src);  
@@ -173,7 +173,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[0].button.onclick = wrongFish;
             options[1].button.onclick  =  wrongFish;
             options[2].button.onclick  = rigthFish;
-            fishCorrectImage = {image: data[108]["Species Illustration Photo"].src, nameScientific: data[108]["Scientific Name"]};
+            fishCorrectImage = data[108]["Species Illustration Photo"].src;
         }else if(fase == 10){
             fishs.push(data[96]["Species Illustration Photo"].src);
             fishs.push(data[57]["Species Illustration Photo"].src);  
@@ -182,7 +182,7 @@ const link = "https://www.fishwatch.gov/api/species";
             options[0].button.onclick = wrongFish;
             options[1].button.onclick  =  rigthFish;
             options[2].button.onclick  = wrongFish;
-            fishCorrectImage = {image: data[57]["Species Illustration Photo"].src, nameScientific: data[57]["Scientific Name"]};
+            fishCorrectImage = data[57]["Species Illustration Photo"].src;
         }
             
             for(var i=0; i < 3; i++){
@@ -193,7 +193,7 @@ const link = "https://www.fishwatch.gov/api/species";
 
             fishCorrect = document.createElement("img");
             fishCorrect.id = "fishCorrect";
-            fishCorrect.src = fishCorrectImage.image;
+            fishCorrect.src = fishCorrectImage;
 
             imageOption.append(fishCorrect);
             fishesOption.append(figure);
