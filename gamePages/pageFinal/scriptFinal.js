@@ -6,7 +6,6 @@ function getPoints(){
  
  var ptn = getPoints();
  
-
  if (ptn > 7) {
     document.getElementById("message").innerHTML = "Parabéns! Você finalizou o jogo";
  }else if (ptn > 4) {

@@ -8,9 +8,8 @@ const link = "https://www.fishwatch.gov/api/species";
         var ptn = window.location.toString().split("ptn=").pop();
         var fishs = [];
         var fishCorrectImage;
-        var fishesOption = document.getElementById("list_image");
-        var imageOption = document.getElementById("optionChallenge");
-        var figure = document.createElement("div");
+       
+        
         var options = [];
 
         function navigatePage(final){
@@ -184,6 +183,8 @@ const link = "https://www.fishwatch.gov/api/species";
             options[2].button.onclick  = wrongFish;
             fishCorrectImage = data[57]["Species Illustration Photo"].src;
         }
+        
+            var figure = document.createElement("div");
             
             for(var i=0; i < 3; i++){
                 options[i]["image"].src = fishs[i];
@@ -194,6 +195,8 @@ const link = "https://www.fishwatch.gov/api/species";
             fishCorrect = document.createElement("img");
             fishCorrect.id = "fishCorrect";
             fishCorrect.src = fishCorrectImage;
+            var fishesOption = document.getElementById("list_image");
+            var imageOption = document.getElementById("optionChallenge");
 
             imageOption.append(fishCorrect);
             fishesOption.append(figure);
